@@ -1,0 +1,21 @@
+version: "3"
+services:
+  proxy-core:
+    build: 
+      context: ./
+      dockerfile: ./proxy-core/Dockerfile
+    restart: always
+    depends_on: []
+    tty: true
+    logging:
+      driver: json-file
+      options:
+        max-size: "1024k"
+    ports:
+      - 3128:3128
+      - 3128:3128/UDP
+    volumes:
+      - type: bind
+        source: ./config
+        target: /etc/squid
+
