@@ -1,0 +1,18 @@
+name: Docker compose Build
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - docker-compose.yml
+      - compose.yml
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the Image
+        run: docker compose build --no-cache
