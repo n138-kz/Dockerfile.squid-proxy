@@ -3,13 +3,7 @@ on:
   workflow_dispatch:
   delete: 
   create: 
-  workflow_run:
-    workflows:
-      - Docker compose Build
   push:
-    paths:
-      - docker-compose.yml
-      - compose.yml
 
 permissions:
   contents: read
