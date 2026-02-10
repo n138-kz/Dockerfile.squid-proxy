@@ -1,10 +1,9 @@
 name: Docker compose Build
 on:
   workflow_dispatch:
+  delete: 
+  create: 
   push:
-    paths:
-      - docker-compose.yml
-      - compose.yml
 
 permissions:
   contents: read
