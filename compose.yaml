@@ -1,11 +1,8 @@
 services:
   proxy-core:
     build: 
-      context: ./
-      dockerfile: ./proxy-core/Dockerfile
-    restart: no
-    depends_on: []
-    tty: true
+      context: .
+    restart: unless-stopped
     logging:
       driver: json-file
       options:
@@ -13,6 +10,8 @@ services:
     ports:
       - 3128:3128
       - 3128:3128/UDP
+      - 8080:3128
+      - 8080:3128/UDP
     volumes:
       - type: bind
         source: ./config
