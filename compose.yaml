@@ -1,4 +1,10 @@
 services:
+  pac-server:
+    image: nginx:alpine
+    volumes:
+      - ./pac:/usr/share/nginx/html
+    ports:
+      - "8081:80"
   proxy-core:
     build: 
       context: .
