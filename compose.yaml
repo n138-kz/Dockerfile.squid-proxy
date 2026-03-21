@@ -1,6 +1,11 @@
 services:
   pac-server:
     image: nginx:alpine
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "1024k"
     volumes:
       - ./pac:/usr/share/nginx/html
     ports:
