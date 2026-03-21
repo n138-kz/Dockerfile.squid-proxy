@@ -15,7 +15,7 @@ services:
         target: /etc/nginx/conf.d.test.d
     ports:
       - "8081:80"
-  proxy-core:
+  proxy-server:
     build: 
       context: .
       dockerfile: Dockerfile-proxy
