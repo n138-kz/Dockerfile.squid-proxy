@@ -20,7 +20,7 @@ services:
         max-size: "1024k"
     volumes:
       - type: bind
-        source: ./config-squid
+        source: ./squid-config
         target: /etc/squid
     ports:
       - 3128:3128
