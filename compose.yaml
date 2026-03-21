@@ -16,7 +16,7 @@ services:
     ports:
       - "8081:80"
   proxy-server:
-    build: 
+    build:
       context: ./proxy-server
       dockerfile: Dockerfile
     restart: unless-stopped
