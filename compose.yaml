@@ -17,8 +17,8 @@ services:
       - "8081:80"
   proxy-server:
     build: 
-      context: .
-      dockerfile: Dockerfile-proxy
+      context: ./proxy-server
+      dockerfile: Dockerfile
     restart: unless-stopped
     logging:
       driver: json-file
