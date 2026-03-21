@@ -18,12 +18,12 @@ services:
       driver: json-file
       options:
         max-size: "1024k"
+    volumes:
+      - type: bind
+        source: ./config-squid
+        target: /etc/squid
     ports:
       - 3128:3128
       - 3128:3128/UDP
       - 8080:3128
       - 8080:3128/UDP
-    volumes:
-      - type: bind
-        source: ./config-squid
-        target: /etc/squid
