@@ -12,7 +12,7 @@ services:
         target: /usr/share/nginx/html
       - type: bind
         source: ./nginx-config
-        target: /etc/nginx/conf.d.test.d
+        target: /etc/nginx/conf.d
     ports:
       - "8081:80"
   proxy-server:
