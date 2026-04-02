@@ -13,9 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Build the Image
         run: docker compose build --no-cache
+
+      - name: Print the config
+        run: docker compose config
+
       - name: Start process
         run: docker compose up -d
+
       - name: Squid version
         run: docker compose exec proxy-server squid --version
