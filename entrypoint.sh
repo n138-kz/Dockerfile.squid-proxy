@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -e
 
 # /etc/squid/squid.conf が存在しない場合にバックアップから復元
