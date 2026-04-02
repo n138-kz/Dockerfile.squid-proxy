@@ -1,14 +1,18 @@
 function FindProxyForURL(url, host) {
-    // ローカルアドレスや特定のセグメントはプロキシを通さない
+    /* ローカルアドレスや特定のセグメントはプロキシを通さない */
     if (isPlainHostName(host) ||
         shExpMatch(host, "*.local") ||
         isInNet(dnsResolve(host), "10.0.0.0", "255.0.0.0") ||
         isInNet(dnsResolve(host), "172.16.0.0", "255.240.0.0") ||
-        isInNet(dnsResolve(host), "192.168.0.0", "255.255.0.0")) {
+        isInNet(dnsResolve(host), "192.168.0.0", "255.255.0.0") ||
+        shExpMatch(host, "*.n138.jp") ||
+        dnsDomainIs(host, "hulu.jp") ||
+        shExpMatch(host, "*.hulu.jp") ||
+        shExpMatch(host, "*.happyon.jp") ||
+        shExpMatch(host, "*.prod.hjholdings.tv") ) {
         return "DIRECT";
     }
 
-    // それ以外はすべて今回のSquidプロキシ（3128番）へ
-    // ※ 172.21.x.x 等、ConoHa側のプロキシIPを指定してください
+    /* それ以外はすべてSquidプロキシへ */
     return "PROXY 172.21.70.22:3128; DIRECT";
 }

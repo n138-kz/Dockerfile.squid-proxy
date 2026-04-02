@@ -7,7 +7,9 @@ services:
     logging:
       driver: json-file
       options:
-        max-size: "1024k"
+        max-size: "10m"
+        max-file: "5"
+        compress: "true"
     volumes:
       - type: bind
         source: ./proxy-pac
@@ -25,7 +27,9 @@ services:
     logging:
       driver: json-file
       options:
-        max-size: "1024k"
+        max-size: "10m"
+        max-file: "5"
+        compress: "true"
     volumes:
       - type: bind
         source: ./squid-config

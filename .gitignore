@@ -5,10 +5,6 @@ Backup/
 backup/
 *.bak*
 
-# Temporary files
-*.tmp
-*.dat
-
 # Secret files
 *.env
 .secret
@@ -19,12 +15,3 @@ backup/
 
 # Shortcut link files
 *.lnk
-*.url
-
-# Builded files
-Build/
-build/
-*.exe
-*.msi
-*.jar
-*.swp
