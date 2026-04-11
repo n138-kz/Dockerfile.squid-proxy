@@ -39,3 +39,6 @@ services:
       - 3128:3128/UDP
       - 8080:3128
       - 8080:3128/UDP
+networks:
+  default:
+    enable_ipv6: true
