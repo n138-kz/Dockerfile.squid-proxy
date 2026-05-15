@@ -3,7 +3,7 @@ services:
     build:
       context: ./pac-server
       dockerfile: Dockerfile
-    restart: unless-stopped
+    restart: always
     logging:
       driver: json-file
       options:
@@ -23,7 +23,7 @@ services:
     build:
       context: ./proxy-server
       dockerfile: Dockerfile
-    restart: unless-stopped
+    restart: always
     logging:
       driver: json-file
       options:
