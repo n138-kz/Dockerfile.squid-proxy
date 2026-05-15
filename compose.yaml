@@ -24,6 +24,8 @@ services:
       context: ./proxy-server
       dockerfile: Dockerfile
     restart: always
+    tmpfs:
+      - /run
     logging:
       driver: json-file
       options:
