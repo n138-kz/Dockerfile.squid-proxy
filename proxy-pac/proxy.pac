@@ -9,7 +9,13 @@ function FindProxyForURL(url, host) {
         dnsDomainIs(host, "hulu.jp") ||
         shExpMatch(host, "*.hulu.jp") ||
         shExpMatch(host, "*.happyon.jp") ||
-        shExpMatch(host, "*.prod.hjholdings.tv") ) {
+        shExpMatch(host, "*.prod.hjholdings.tv") ||
+	shExpMatch(host, "*.discord.media") ||
+	shExpMatch(host, "*.discord.gg") ||
+	shExpMatch(host, "*.discordapp.com") ||
+	shExpMatch(host, "*.discord.com") ||
+	shExpMatch(host, "*.gofile.io")
+    ) {
         return "DIRECT";
     }
 
